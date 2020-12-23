@@ -1,0 +1,6 @@
+me\fishergee\christmaspresent\cmds\PresentCmd.class
+me\fishergee\christmaspresent\ChristmasPresent.class
+me\fishergee\christmaspresent\util\NBTUtil.class
+me\fishergee\christmaspresent\listeners\PresentPlace.class
+me\fishergee\christmaspresent\listeners\PresentExplode.class
+me\fishergee\christmaspresent\listeners\PresentBreak.class

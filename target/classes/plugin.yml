@@ -1,0 +1,9 @@
+name: ChristmasPresent
+version: 1.0
+main: me.fishergee.christmaspresent.ChristmasPresent
+authors: [FisherGee]
+description: Cool christmas plugin.
+commands:
+  present:
+    description: Command for christmas present
+    usage: /present
