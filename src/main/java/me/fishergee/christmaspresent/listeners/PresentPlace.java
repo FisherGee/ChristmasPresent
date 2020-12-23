@@ -6,6 +6,7 @@ import de.tr7zw.nbtapi.NBTItem;
 import de.tr7zw.nbtapi.NBTTileEntity;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Chest;
@@ -48,6 +49,8 @@ public class PresentPlace implements Listener {
         }else{
             return;
         }
+
+        p.playSound(p.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 10);
 
         if(persistentDataContainer.hasKey("message")){
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', persistentDataContainer.getString("message")));

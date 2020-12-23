@@ -4,6 +4,7 @@ import de.tr7zw.nbtapi.NBTCompound;
 import de.tr7zw.nbtapi.NBTCompoundList;
 import de.tr7zw.nbtapi.NBTItem;
 import de.tr7zw.nbtapi.NBTTileEntity;
+import me.fishergee.christmaspresent.util.NBTUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -28,20 +29,16 @@ public class PresentBreak implements Listener {
             return;
         }
 
-        BlockState state = block.getState();
+        NBTCompound persistentDataContainer;
 
-        NBTTileEntity tileEnt = new NBTTileEntity(state);
-
-        NBTCompound persistentDataContainer = tileEnt.getPersistentDataContainer();
-
-        //checks if its a present
-        if(persistentDataContainer.hasKey("id")){
-            if(!persistentDataContainer.getString("id").equalsIgnoreCase("present")){
-                return;
-            }
-        }else{
+        if(NBTUtil.isPresent(block) != null){
+            persistentDataContainer = NBTUtil.isPresent(block);
+        }
+        else{
             return;
         }
+
+        BlockState state = block.getState();
 
         Chest chestBlock = (Chest) state;
 

@@ -49,7 +49,6 @@ public class PresentCmd implements CommandExecutor {
 
                     String message = "";
 
-                    //message riley hey
                     for(int i = 1; i < args.length; i ++){
                         if(i == 1){
                             message = args[i];
@@ -66,6 +65,8 @@ public class PresentCmd implements CommandExecutor {
                 }
                 else{
                     p.sendMessage(ChatColor.RED + "That is not a present.");
+                    NBTItem presentNBT = new NBTItem(p.getInventory().getItemInMainHand(), true);
+                    p.sendMessage(presentNBT.getString("id"));
                 }
             }
         }
